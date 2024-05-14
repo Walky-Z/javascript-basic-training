@@ -217,6 +217,45 @@ console.log(areEqual(address1, address2));
 
 // Exercice 4
 
-const blockPost = {
-
+let post = {
+  title: 'review',
+  body: 'This is good',
+  author: 'Me',
+  views: 42,
+  comments: [
+    {auhtor: 'Me', body: 'It is'},
+    {auhtor: 'New user', body: 'Well'}
+  ],
+  isLive: true
 }
+
+console.log(post)
+
+// Exerice 5
+function Post(title, body, author) {
+  this.title = title;
+  this.body = body;
+  this.author = author;
+  this.views = 0;
+  this.comments = [];
+  this.isLive = false;
+}
+
+let newpost = new Post('a', 'b', 'c');
+console.log(newpost);
+
+// Exercice 6
+
+function PriceRange(label, description, minPerPerson, maxPerPerson) {
+  this.label = label,
+  this.description = description,
+  this.minPerPerson = minPerPerson,
+  this.maxPerPerson = maxPerPerson
+}
+
+const cheap = new PriceRange('$', 'Cheap', 0, 10);
+const average = new PriceRange('$$', 'Average', 11, 20);
+const expensive = new PriceRange('$$$', 'Expensive', 21, 50);
+
+let pricearray = [cheap, average, expensive];
+console.log(pricearray);
