@@ -177,16 +177,46 @@ function createAddress(street, city, zipCode) {
     zipCode
   };
 }
-const address1 = createAddress("4 Rue", "Paris", "75000");
-console.log(address1);
+// const address1 = createAddress("4 Rue", "Paris", "75000");
 
 function Address(street, city, zipCode) {
   this.street = street;
   this.city = city;
   this.zipCode = zipCode;
 }
+let address1 = new Address("4 Rue", "Paris", "75000");
+let address2 = new Address("4 Rue", "Pa0ris", "75900");
+let address3 = address1;
+let address4 = new Address("4 Rue", "Paris", "75000");
+address4.country = 'France';
 
-const address2 = new Address("5 Rue", "Pariss", "75900");
+console.log(address1);
 console.log(address2);
 
 // Exercice 3
+
+function areSame(address1, address2) {
+  return address1 === address2;
+}
+
+function areEqual(address1, address2) {
+  const keys1 = Object.keys(address1);
+  const keys2 = Object.keys(address2);
+
+  if (keys1.length !== keys2.length)
+    return false;
+
+  for (let key of keys1)
+    if (address1[key] !== address2[key])
+      return false;
+
+  return true;
+}
+
+console.log(areEqual(address1, address2));
+
+// Exercice 4
+
+const blockPost = {
+
+}
