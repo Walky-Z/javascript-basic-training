@@ -158,3 +158,28 @@ cours.sort(function(a, b) {
 console.log(cours);
 
 // 11 - Testing the Elements of an Array
+
+// Testing all elements
+
+// Check if all
+
+const exemple2 = [-2, 3, 1];
+
+const allPositive = exemple2.every(function(value) {
+  return value >= 0;
+});
+
+// Check if any
+const atLeastOnePositive = exemple2.some(function(value) {
+  return value >= 0;
+});
+
+console.log(allPositive);
+console.log(atLeastOnePositive);
+
+// 12 - Filtering an Array
+const filtered = exemple2.filter(n => n >= 0);
+
+console.log(filtered);
+
+// 13 - Mapping an Array
