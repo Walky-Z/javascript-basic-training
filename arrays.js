@@ -183,3 +183,45 @@ const filtered = exemple2.filter(n => n >= 0);
 console.log(filtered);
 
 // 13 - Mapping an Array
+const exemple3 = [1, -1, -2, 3, 1];
+const filtered2 = exemple3.filter(n => n >= 0);
+const items = filtered2.map(n => '<li>' + n + '</li>');
+const html = '<ul>' + items.join('') + '</ul>'
+
+// console.log(html);
+const items2 = filtered2.map(n => {
+  return { value: n };
+});
+
+const items3 = filtered2.map(n => ({ value: n }));
+
+// Chaining methods
+const items4 = exemple3
+  .filter(n => n >= 0)
+  .map(n => ({ value: n }))
+  .filter(obj => obj.value > 1)
+  .map(obj => obj.value);
+
+
+console.log(items4);
+
+// 14 - Reducing an Array
+
+const nbs = [1, -1, 2, 3];
+
+let sum = 0;
+
+for (let n of nbs)
+  sum += n;
+
+console.log(sum);
+
+// Reduce Method (looping method)
+
+const sum2 = nbs.reduce(
+  (accumulator, currentValue) => accumulator + currentValue
+, 0); //  0 here is the initial value (optionnal)
+
+console.log(sum2);
+
+// Exercice 1 - Array from Range
