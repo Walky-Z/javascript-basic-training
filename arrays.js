@@ -225,3 +225,40 @@ const sum2 = nbs.reduce(
 console.log(sum2);
 
 // Exercice 1 - Array from Range
+
+const createnb = arrayFromRange(-10, -4);
+
+function arrayFromRange(min, max) {
+  let numbers = [];
+  for (let i = min; i <= max; i++)
+    numbers.push(i);
+  return numbers;
+}
+
+console.log(createnb);
+
+// Exercice 2 = Includes
+
+const nb2 = [1, 2, 3, 4];
+
+function includes(array, searchElement) {
+  return array.indexOf(searchElement) !== -1
+}
+
+console.log(nb2.includes(1));
+
+// Exercice 3 - Except
+
+const nb3 = [1, 2, 3, 4, 1, 1, 2, 16, 2, 0, 1];
+
+const output = except(nb3, [1, 2]);
+
+console.log(output);
+
+function except(array, excluded) {
+  excluded.forEach(function(number) {
+    while(array.indexOf(number) !== -1)
+      array.splice(array.indexOf(number), 1);
+  })
+  return array;
+}
