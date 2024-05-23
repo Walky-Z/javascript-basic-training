@@ -284,3 +284,26 @@ function move(array, index, offset) {
   output.splice(position, 0, element);
   return output;
 }
+
+// Exercice 5
+
+const nb5 = [1, 1, 2, 3, 4, 1]
+
+const count = countOccurrences(nb5, 1);
+
+console.log(count);
+
+function countOccurrences(array, searchElement) {
+  // Version 1
+  // let nbocc = 0
+  // array.forEach(function (number) {
+  //   if(number === searchElement)
+  //     nbocc += 1;
+  // })
+
+  return array.reduce((accumulator, currentValue) => {
+    const nbocc = (currentValue === searchElement) ? 1 : 0;
+    console.log(accumulator, currentValue, searchElement);
+    return accumulator + nbocc;
+  }, 0);
+}
