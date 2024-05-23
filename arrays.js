@@ -262,3 +262,25 @@ function except(array, excluded) {
   })
   return array;
 }
+
+// Exercice 4
+
+const nb4 = [1, 2, 3, 4]
+
+const out4 = move(nb4, 0, 2);
+
+console.log(out4);
+
+function move(array, index, offset) {
+
+
+  const position = index + offset;
+  if(position >= array.length || position < 0) {
+    console.error("Invalid offset");
+    return;
+  }
+  const output = [...array];
+  const element = output.splice(index, 1)[0]; // [0] to get the element spliced
+  output.splice(position, 0, element);
+  return output;
+}
