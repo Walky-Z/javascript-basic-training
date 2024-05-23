@@ -307,3 +307,23 @@ function countOccurrences(array, searchElement) {
     return accumulator + nbocc;
   }, 0);
 }
+
+// Exercice 6
+
+const nb6 = [1, 2, 3, 4, 81, 16, 23, 0, 2];
+
+const max = getMax(nb6);
+
+console.log("max is :", max);
+
+function getMax(array) {
+  if (array.length === 0) return undefined;
+  // Version 1
+  // let max = array[0];
+  // array.forEach(number => {
+  //   if (number > max)
+  //     max = number;
+  // })
+  // return max;
+  return array.reduce((maxi, currentValue) => (maxi > currentValue) ? maxi : currentValue);
+}
