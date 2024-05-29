@@ -337,8 +337,9 @@ const movies = [
   { title: 'd', year: 2017, rating: 4.5 },
 ]
 
-const moviesfiltered = movies
+const titles = movies
   .filter(movie => movie.year === 2018 && movie.rating > 4)
-  .sort((a, b) => b.rating - a.rating);
+  .sort((a, b) => b.rating - a.rating)
+  .map(m => m.title);
 
-moviesfiltered.forEach(movie => console.log(movie.title))
+console.log(titles);
