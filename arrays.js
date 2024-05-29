@@ -327,3 +327,18 @@ function getMax(array) {
   // return max;
   return array.reduce((maxi, currentValue) => (maxi > currentValue) ? maxi : currentValue);
 }
+
+// Exercice 7
+
+const movies = [
+  { title: 'a', year: 2018, rating: 4.5 },
+  { title: 'b', year: 2018, rating: 4.7 },
+  { title: 'c', year: 2018, rating: 3 },
+  { title: 'd', year: 2017, rating: 4.5 },
+]
+
+const moviesfiltered = movies
+  .filter(movie => movie.year === 2018 && movie.rating > 4)
+  .sort((a, b) => b.rating - a.rating);
+
+moviesfiltered.forEach(movie => console.log(movie.title))
