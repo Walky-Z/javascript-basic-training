@@ -244,3 +244,25 @@ const cercle = {
 }
 
 console.log(cercle.area)
+
+// Exercice 3
+const numbers = [1, 1, 2, 3, 4, 1]
+
+try {
+const count = countOccurrences(true, 1);
+console.log(count);
+}
+catch (e) {
+  alert(e.message);
+}
+
+function countOccurrences(array, searchElement) {
+  if (!Array.isArray(array))
+    throw new Error('Invalid array.');
+
+  return array.reduce((accumulator, currentValue) => {
+    const nbocc = (currentValue === searchElement) ? 1 : 0;
+    console.log(accumulator, currentValue, searchElement);
+    return accumulator + nbocc;
+  }, 0);
+}
